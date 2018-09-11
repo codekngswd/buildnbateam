@@ -1,0 +1,15 @@
+header {
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+header p {
+    margin-top: 0;
+}
+
+header a {
+    text-decoration: none;
+}

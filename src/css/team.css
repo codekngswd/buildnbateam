@@ -1,0 +1,17 @@
+#teamContainer {
+    width: 100%;
+    text-align: center;
+    border: 5px solid black;
+
+    background: crimson;
+    
+    position: fixed;
+    bottom: 0;
+}
+
+#teamContainer #team {
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
