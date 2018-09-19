@@ -19,13 +19,7 @@ class Player extends React.Component {
 
                 <img src={image} alt={name} />
 
-                <AddPlayer
-                    index={this.props.index}
-                    addToTeam={this.props.addToTeam}
-                    disableButton={this.props.disableButton}
-                    players={this.props.players}
-                    details={this.props.players}
-                />
+                <AddPlayer />
             </div>
         );
     }

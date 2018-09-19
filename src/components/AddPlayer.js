@@ -1,17 +1,26 @@
 import React from 'react';
 
-class AddPlayer extends React.Component {
+// CSS Files
+import '../css/addPlayer.css'; 
 
-  render() {
+// Import Consumer Context for IsDisabled and AddToTeam
+import { ConsumerIsDisabled } from './App';
+import { ConsumerAddToTeam } from './App';
+
+const AddPlayer = () => {
     return (
-      <div id="addPlayerButton">
-        <button disabled={this.props.disableButton()} onClick={() => this.props.addToTeam(this.props.index)}>
-          {/* {isAvailable ? 'Add Player' : 'Unavailable'} */}
-          Add Player
-        </button>
-      </div>
+        <ConsumerIsDisabled>
+            {disableButton => (
+                <ConsumerAddToTeam>
+                    {addToTeam => (
+                        <div id="addPlayerButton">
+                            <button disabled={disableButton} onClick={addToTeam}>Add Player</button>
+                        </div>
+                    )}
+                </ConsumerAddToTeam>
+            )}
+        </ConsumerIsDisabled>
     );
-  }
 }
 
 export default AddPlayer;
