@@ -77,15 +77,25 @@ class App extends Component {
      * total points is equal to or greater than 15, 
      * then set isDisabled to true and disable all
      * Player buttons  */
+    if (Object.keys(this.state.team).length < 5 && total >= 15) {
+      alert ("Team Size " + Object.keys(this.state.team).length + " Players with " + total + " Points.");
+    } 
+    
     if (Object.keys(this.state.team).length === 5 && total > 15) {
       isDisabled = true;
-    } else if (Object.keys(this.state.team).length === 5 || total >= 15) {
+      alert ("Total Points: " + total + ". Too high.");
+    } 
+    
+    if (Object.keys(this.state.team).length === 5 && total < 15) {
+      isDisabled = true;
+      alert ("Total Points: " + total + ". Too low.");
+    }
+
+    if (Object.keys(this.state.team).length === 5 || total >= 15) {
       isDisabled = true;
     } else {
       isDisabled = false;
     }
-
-    // if (Object.keys(this.state.team).length === 5 && total > 15)
 
     return (
       <div>
@@ -102,9 +112,9 @@ class App extends Component {
         Functionality:
         - Add Player
         */}
-        <div>
+        <div class="grid-container">
           {/** Horizontal Table that indicates Player Point value */}
-          <table id="pointsTitle">
+          <table class="title" id="pointsTitle">
             <tbody>
               <tr>
                 <td><h1>5</h1></td>
@@ -117,7 +127,7 @@ class App extends Component {
           </table>
 
           {/** Vertical Table that indicates Player Position */}
-          <table id="positionsTitle">
+          <table class="menu" id="positionsTitle">
             <tbody>
               <tr>
                 <td><h1>PG</h1></td>
@@ -137,7 +147,7 @@ class App extends Component {
             </tbody>
           </table>
 
-          <div id="playerContainer">
+          <div class="content background" id="playerContainer">
             {Object.keys(this.state.players).map(key => (
               <ProviderIsDisabled key={key} value={isDisabled}>
                 <ProviderAddToTeam value={() => this.addToTeam(key)}>

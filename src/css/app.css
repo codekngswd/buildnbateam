@@ -1,20 +1,47 @@
 /** App.js */
 #pointsTitle {
     width: 80vw;
-    
-    margin-left: auto;
-    margin-right: auto;
-
-    background: crimson;
 }
 
 #pointsTitle td {
     text-align: center;
 }
 
-#positionsTitle {
-    float: left;
-    height: 180vh;
+#pointsTitle h1 {
+    margin-bottom: 0;
+}
 
-    background: crimson;
+#positionsTitle {
+    height: 165vh;
+}
+
+#positionsTitle td {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 1vw;
+}
+
+.menu {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.title {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 1;
+}
+
+.content {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    grid-row-start: 2;
+    grid-row-end: 5;
 }

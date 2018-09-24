@@ -15,8 +15,6 @@ class Player extends React.Component {
             <div id="player">
                 <h3>{name}</h3>
 
-                <p>{status}</p>
-
                 <img src={image} alt={name} />
 
                 <AddPlayer />

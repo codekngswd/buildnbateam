@@ -14,8 +14,8 @@ class Team extends React.Component {
 
     return (
       <div id="playerChoice" key={key}>
-        <h3>{player.position}: {player.name}</h3>
-        <p>{player.value}</p>
+        <h3>{player.name} ({player.value})</h3>
+        
         <img src={player.image} alt={player.name} />
         <button onClick={() => this.props.removeFromTeam(key)}>&times;</button>
       </div>
@@ -41,11 +41,6 @@ class Team extends React.Component {
             <td></td>
               <td><h1>Your Team</h1></td>
               <td><button id="clearTeamButton" onClick={this.props.clearTeamState}>Clear Team</button></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><h2>Total Points: {total}</h2></td>
-              <td></td>
             </tr>
           </tbody>
         </table>
