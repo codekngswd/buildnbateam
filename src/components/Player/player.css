@@ -7,14 +7,6 @@
     margin-bottom: 45vh;
 }
 
-.background {
-    background-image: url("../../images/background.jpg");
-    background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
 #player {
     margin-left: auto;
     margin-right: auto;
@@ -47,4 +39,12 @@
 
     grid-row-start: 2;
     grid-row-end: 5;
+}
+
+.background {
+    background-image: url("../../images/background.jpg");
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }

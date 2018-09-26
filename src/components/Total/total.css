@@ -1,0 +1,24 @@
+#totalContainer {
+    width: 10vw;
+    height: 10vh;
+
+    position: fixed;
+    
+    top: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 1);
+    border: 5px solid rgba(245, 245, 245, 1);
+}
+
+#totalContainer p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8vh;
+    
+    color: rgba(220, 20, 60, 1);
+
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}

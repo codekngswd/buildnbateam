@@ -2,7 +2,7 @@ header {
     text-align: center;
     height: 10vh;
 
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgba(245, 245, 245, 1);
 }
 
 header h1 {

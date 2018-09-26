@@ -24,14 +24,6 @@ class Team extends React.Component {
   render() {
     const teamIds = Object.keys(this.props.team);
 
-    const total = teamIds.reduce((prevTotal, key) => {
-      const player = this.props.players[key];
-
-      prevTotal = prevTotal + player.value;
-
-      return prevTotal;
-    }, 0);
-
     return (
       <div id="teamContainer">
         <table id="teamContainerTitle">

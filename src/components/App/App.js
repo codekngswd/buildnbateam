@@ -12,6 +12,7 @@ import './app.css';
 import playerList from '../../player-list.js';
 import PointsTitle from '../PointsTitle/PointsTitle';
 import PositionsTitle from '../PositionsTitle/PositionsTitle';
+import Total from '../Total/Total';
 
 // Context
 const AddToTeamContext = React.createContext({});
@@ -116,6 +117,15 @@ class App extends Component {
         */}
         <Header />
 
+        {/*
+        Total Component
+        Displays user's current total
+        */}
+        <Total
+          players={this.state.players}
+          team={this.state.team}
+        />
+
         <div class="grid-container">
           {/** Horizontal Table that indicates Player Point value */}
           <PointsTitle />
@@ -127,9 +137,10 @@ class App extends Component {
           Player Component
           Contains all Players
 
-          Functionality:
+          Functionality (Passed using Context):
           - Add Player
-        */}
+          - isDisabled
+          */}
           <div class="content background" id="playerContainer">
             {Object.keys(this.state.players).map(key => (
               <ProviderIsDisabled key={key} value={isDisabled}>
