@@ -1,0 +1,9 @@
+div {
+    font-size: 2vh;
+    font-family: helvetica, arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 1vw;
+}

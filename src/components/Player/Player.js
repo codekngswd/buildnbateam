@@ -1,15 +1,15 @@
 import React from 'react';
 
 // Component Files
-import AddPlayer from './AddPlayer';
+import AddPlayer from '../AddPlayer/AddPlayer';
 
 // CSS Files
-import '../css/player.css';
+import './player.css';
 
 class Player extends React.Component {
 
     render() {
-        const { name, image, status } = this.props.details;
+        const { name, image } = this.props.details;
 
         return (
             <div id="player">

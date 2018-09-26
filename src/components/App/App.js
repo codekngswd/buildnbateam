@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
 // Component Files
-import Header from "./Header";
-import Player from './Player';
-import Team from "./Team";
+import Header from "../Header/Header";
+import Player from '../Player/Player';
+import Team from "../Team/Team";
 
 // CSS Files
-import '../css/app.css'; 
+import './app.css';
 
 // JavaScript File
-import playerList from '../player-list.js';
+import playerList from '../../player-list.js';
+import PointsTitle from '../PointsTitle/PointsTitle';
+import PositionsTitle from '../PositionsTitle/PositionsTitle';
 
 // Context
 const AddToTeamContext = React.createContext({});
@@ -63,8 +65,7 @@ class App extends Component {
 
   render() {
     /** Using Team State take each Player, add their
-     * values and save in total
-     */
+     * values and save in total */
     const teamIds = Object.keys(this.state.team);
 
     const total = teamIds.reduce((prevTotal, key) => {
@@ -73,24 +74,34 @@ class App extends Component {
       return prevTotal;
     }, 0);
 
-    /** If the length of Team State is equal to 5 OR,
-     * total points is equal to or greater than 15, 
-     * then set isDisabled to true and disable all
-     * Player buttons  */
+    /** If the length of Team State is less than 5 AND
+     * total points is equal to or greater than 15
+     * alert user. set isDisabled TRUE below
+     */
     if (Object.keys(this.state.team).length < 5 && total >= 15) {
-      alert ("Team Size " + Object.keys(this.state.team).length + " Players with " + total + " Points.");
-    } 
-    
+      alert("Team Size " + Object.keys(this.state.team).length + " Players with " + total + " Points.");
+    }
+    /** If the length of Team State is equal to 5 AND
+     * total points is greater than 15
+     * alert user. set isDisabled TRUE below
+     */
     if (Object.keys(this.state.team).length === 5 && total > 15) {
-      isDisabled = true;
-      alert ("Total Points: " + total + ". Too high.");
-    } 
-    
-    if (Object.keys(this.state.team).length === 5 && total < 15) {
-      isDisabled = true;
-      alert ("Total Points: " + total + ". Too low.");
+      alert("Total Points: " + total + ". Too high.");
     }
 
+    /** If the length of Team State is equal to 5 AND
+     * total points is less than 15
+     * alert user. set isDisabled TRUE
+     */
+    if (Object.keys(this.state.team).length === 5 && total < 15) {
+      isDisabled = true;
+      alert("Total Points: " + total + ". Too low.");
+    }
+
+    /** If the length of Team State is equal to 5 OR
+     * total points is equal to or greater than 15, 
+     * then set isDisabled to true and disable all
+     * Player buttons */
     if (Object.keys(this.state.team).length === 5 || total >= 15) {
       isDisabled = true;
     } else {
@@ -105,48 +116,20 @@ class App extends Component {
         */}
         <Header />
 
-        {/*
-        Player Component
-        Contains all Players
-
-        Functionality:
-        - Add Player
-        */}
         <div class="grid-container">
           {/** Horizontal Table that indicates Player Point value */}
-          <table class="title" id="pointsTitle">
-            <tbody>
-              <tr>
-                <td><h1>5</h1></td>
-                <td><h1>4</h1></td>
-                <td><h1>3</h1></td>
-                <td><h1>2</h1></td>
-                <td><h1>1</h1></td>
-              </tr>
-            </tbody>
-          </table>
+          <PointsTitle />
 
           {/** Vertical Table that indicates Player Position */}
-          <table class="menu" id="positionsTitle">
-            <tbody>
-              <tr>
-                <td><h1>PG</h1></td>
-              </tr>
-              <tr>
-                <td><h1>SG</h1></td>
-              </tr>
-              <tr>
-                <td><h1>SF</h1></td>
-              </tr>
-              <tr>
-                <td><h1>PF</h1></td>
-              </tr>
-              <tr>
-                <td><h1>C</h1></td>
-              </tr>
-            </tbody>
-          </table>
+          <PositionsTitle />
 
+          {/*
+          Player Component
+          Contains all Players
+
+          Functionality:
+          - Add Player
+        */}
           <div class="content background" id="playerContainer">
             {Object.keys(this.state.players).map(key => (
               <ProviderIsDisabled key={key} value={isDisabled}>

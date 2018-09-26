@@ -1,10 +1,9 @@
 import React from 'react';
 
 // CSS Files
-import '../css/team.css';
+import './team.css';
 
 class Team extends React.Component {
-  /** */
   renderTeam = key => {
     const player = this.props.players[key];
 

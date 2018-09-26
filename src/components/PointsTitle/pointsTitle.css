@@ -1,0 +1,19 @@
+#pointsTitle {
+    width: 80vw;
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+#pointsTitle td {
+    text-align: center;
+}
+
+#pointsTitle h1 {
+    margin-bottom: 0;
+}
+
+.title {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 1;
+}

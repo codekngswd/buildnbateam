@@ -1,8 +1,3 @@
-/**
- * This list has been put together by Bleacher Report, the link found below.
- * https://bleacherreport.com/articles/2753686-player-position-rankings-nbas-top-100-players-for-seasons-2nd-half
- */
-
 const players = {
     player1: {
         name: "Stephen Curry",

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // CSS Files
-import '../css/addPlayer.css'; 
+import './addPlayer.css'; 
 
 // Import Consumer Context for IsDisabled and AddToTeam
-import { ConsumerIsDisabled } from './App';
-import { ConsumerAddToTeam } from './App';
+import { ConsumerIsDisabled } from '../App/App';
+import { ConsumerAddToTeam } from '../App/App';
 
 const AddPlayer = () => {
     return (

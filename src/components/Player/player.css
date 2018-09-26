@@ -8,7 +8,7 @@
 }
 
 .background {
-    background-image: url("../images/background.jpg");
+    background-image: url("../../images/background.jpg");
     background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -39,4 +39,12 @@
 #player img {
     width: 15vw;
     height: 20vh;
+}
+
+.content {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    grid-row-start: 2;
+    grid-row-end: 5;
 }
